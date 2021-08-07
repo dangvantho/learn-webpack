@@ -1,25 +1,11 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-
-App.propTypes = {
-    
-};
-
-function App(props) {
-    const [count, setCount]= useState(0)
-    return (
-        <div className='container'>
-            <div className="row ">
-                <div className="col text-center">
-                Count donw : {count}
-                </div>
-            </div>
-            <div className="row">
-                <div className="col btn btn-primary" onClick={()=>setCount(count-1)}>-</div>
-                <div className="col btn btn-primary" onClick={()=>setCount(count+1)}>+</div>
-            </div>
-        </div>
-    );
-}
-
-export default App;
+import React from "react";
+import { render } from "react-dom";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import AppRouter from "./Router";
+import "./style.css";
+const App = () => (
+  <MuiThemeProvider>
+    <AppRouter />
+  </MuiThemeProvider>
+);
+render(<App />, document.getElementById("app"));
